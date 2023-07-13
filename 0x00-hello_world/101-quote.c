@@ -11,10 +11,10 @@
 
 int main(void)
 {
-	char message[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
+	char q[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
 
-	int length = strlen(message);
+	int length = strlen(q);
 
-	write(1, message, length);
+	write(1, q, length);
 	return (1);
 }

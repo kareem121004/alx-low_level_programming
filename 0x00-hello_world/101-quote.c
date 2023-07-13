@@ -1,4 +1,5 @@
-#include <unistd>
+#include <unistd.h>
+#include <string.h>
 
 /**
  * main - Entry point
@@ -14,6 +15,6 @@ int main(void)
 
 	int length = strlen(message);
 
-	write(1, message, lenght);
+	write(1, message, length);
 	return (1);
 }

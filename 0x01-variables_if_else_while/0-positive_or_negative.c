@@ -6,7 +6,7 @@
  *
  * Description: positive or negative or zero
  *
- * Retur: always 0
+ * Return: always 0
 */
 int main(void)
 {

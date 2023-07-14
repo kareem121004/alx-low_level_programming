@@ -10,19 +10,19 @@
 
 int main(void)
 {
-	int i = 97;
+	char c = 'a';
+	char C = 'A';
 
-	while (i <= 122)
+	while (c <= 'z')
 	{
-		putchar(i);
-		i++;
+		putchar(c);
+		c++;
 	}
-	int j = 65;
 
-	while (j <= 90)
+	while (C <= 'Z')
 	{
-		putchar(j);
-		j++;
+		putchar(C);
+		C++;
 	}
 	putchar('\n');
 	return (0);

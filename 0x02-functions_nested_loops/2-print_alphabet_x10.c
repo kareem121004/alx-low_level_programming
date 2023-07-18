@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* main - check the code
+* main - function to print alpha for 9 times
 *
 * Return: Always 0.
 */

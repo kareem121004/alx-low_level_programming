@@ -6,5 +6,4 @@ carrie@ubuntu:/debugging$ cat main.h
 
 void positive_or_negative(int i);
 
-#endif /* MAIN_H */
-carrie@ubuntu:/debugging$ 
+#endif /* MAIN_H */ 

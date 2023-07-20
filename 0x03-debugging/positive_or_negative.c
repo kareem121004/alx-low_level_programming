@@ -3,14 +3,14 @@
 /**
  * positive_or_negative - positive or negative or zero,
  * followed by a new line
- * @i: print from this number
+ * @n: print from this number
  */
-void positive_or_negative(int i)
+void positive_or_negative(int n)
 {
-	if (i > 0)
-		printf("%d is positive\n", i);
-	else if (i < 0)
-		printf("%d is negative\n", i);
+	if (n > 0)
+		printf("%d is positive\n", n);
+	else if (n < 0)
+		printf("%d is negative\n", n);
 	else
-		printf("%d is zero\n", i);
+		printf("%d is zero\n", n);
 }

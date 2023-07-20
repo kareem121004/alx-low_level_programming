@@ -5,7 +5,7 @@
 * @n: is the num to be checked
 */
 
-void print_number(int n);
+void print_number(int n)
 {
 	unsigned int num = n;
 

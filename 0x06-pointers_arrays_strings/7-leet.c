@@ -6,23 +6,34 @@
  * Return: Pointer to the modified string.
 */
 
+#include <stdio.h>
+
 char *leet(char *str)
 {
-	char *ptr = str;
+    char leet_chars[] = "AEOTLaeotl";
+    char leet_replacements[] = "4307143071";
+    
+    char *p = str;
 
-	while (*ptr)
-	{
-		if (*ptr == 'a' || *ptr == 'A')
-			*ptr = '4';
-		else if (*ptr == 'e' || *ptr == 'E')
-			*ptr = '3';
-		else if (*ptr == 'o' || *ptr == 'O')
-			*ptr = '0';
-		else if (*ptr == 't' || *ptr == 'T')
-			*ptr = '7';
-		else if (*ptr == 'l' || *ptr == 'L')
-			*ptr = '1';
-		ptr++;
-	}
-	return (str);
+    while (*p)
+    {
+        char *leet_p = leet_chars;
+        char *leet_r = leet_replacements;
+        
+        while (*leet_p)
+        {
+            if (*p == *leet_p)
+            {
+                *p = *leet_r;
+                break;
+            }
+            leet_p++;
+            leet_r++;
+        }
+        
+        p++;
+    }
+    
+    return str;
 }
+

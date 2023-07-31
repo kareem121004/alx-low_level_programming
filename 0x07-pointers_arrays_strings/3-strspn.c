@@ -1,26 +1,25 @@
 #include "main.h"
-
 size_t _strspn(const char *s, const char *accept)
 {
     size_t counter = 0;
 
-    while (*s)
+    for (; *s; s++)
     {
-        const char *a = accept;
-        while (*a)
+        int is_matched = 0;
+
+        for (const char *a = accept; *a; a++)
         {
             if (*s == *a)
             {
-                counter++;
+                is_matched = 1;
                 break;
             }
-            a++;
         }
 
-        if (*a == '\0')
+        if (!is_matched)
             break;
 
-        s++;
+        counter++;
     }
 
     return counter;

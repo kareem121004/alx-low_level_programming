@@ -1,27 +1,25 @@
 #include "main.h"
-#include <stdio.h>
 
-unsigned int _strspn(char *s, char *accept)
+size_t _strspn(const char *s, const char *accept)
 {
-    int counter = 0;
+    size_t counter = 0;
 
-    while (*s != '\0')
+    while (*s)
     {
-        int is_matched = 0;
-
-        for (char *a = accept; *a != '\0'; a++)
+        const char *a = accept;
+        while (*a)
         {
             if (*s == *a)
             {
-                is_matched = 1;
+                counter++;
                 break;
             }
+            a++;
         }
 
-        if (is_matched)
-            counter++;
-        else
+        if (*a == '\0')
             break;
+
         s++;
     }
 

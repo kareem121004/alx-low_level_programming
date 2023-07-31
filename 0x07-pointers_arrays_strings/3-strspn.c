@@ -3,7 +3,7 @@
 /**
  *_strspn - a function that locates a character in a string.
  *@s: is the char to be checked
- *@c: is the char to be checked
+ *@accept: is the char to be checked
  *Return: a pointer to the first occurrence.
 */
 

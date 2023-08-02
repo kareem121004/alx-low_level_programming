@@ -8,8 +8,8 @@
  * Return: 0 or 1
 */
 
-int length(char *s);
 int ispal(char *s, int l, int e);
+int length(char *s);
 int is_palindrome(char *s)
 {
 	int len = length(s);

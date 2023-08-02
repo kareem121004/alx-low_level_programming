@@ -8,16 +8,15 @@
  * Return: 0 or 1
 */
 
+int length(char *s);
 int ispal(char *s, int l, int e);
 int is_palindrome(char *s)
 {
-	int i = 0;
+	int len = length(s);
 
-	while (s[i])
-		i++;
-	if (i == 0)
+	if (len == 0)
 		return (1);
-	return (ispal(s, 0, i - 1));
+	return (ispal(s, 0, len - 1));
 }
 
 /**
@@ -37,4 +36,17 @@ int ispal(char *s, int l, int e)
 	if (l < e + 1)
 		return (ispal(s, l + 1, e - 1));
 	return (1);
+}
+
+/**
+ * length - calculate the length of a string
+ * @s: input string
+ * Return: length of the string
+ */
+
+int length(char *s)
+{
+	if (*s == '\0')
+		return (0);
+	return (1 + length(s + 1));
 }

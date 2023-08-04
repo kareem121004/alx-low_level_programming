@@ -3,10 +3,10 @@
 
 int main(int argc, char *argv[])
 {
-    int i, sum = 0;
+    int sum = 0;
     char *c;
-    for (i = 1; i < argc; ++i) {
-        for (c = argv[i]; *c ; c++)
+    while (--argc) {
+        for (c = argv[argc]; *c ; c++)
         {
             if (*c < '0' || *c > '9')
             {
@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
                 return (1);
             }
         }
-        sum += atoi(argv[i]);
+        sum += atoi(argv[argc]);
     }
     printf("%d", sum);
     return (0);

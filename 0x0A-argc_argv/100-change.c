@@ -18,13 +18,6 @@ int main(int argc, char *argv[])
 	}
 
 	int cents = atoi(argv[1]);
-
-	if (cents < 0)
-	{
-		printf("0\n");
-		return (0);
-	}
-
 	int num_coins = 0;
 	int denominations[] = {25, 10, 5, 2, 1};
 	int i;
@@ -33,8 +26,11 @@ int main(int argc, char *argv[])
 	{
 		while (cents >= denominations[i])
 		{
-			cents -= denominations[i];
-			num_coins++;
+			num_coins += cents / denominations[i];
+			cents = cents % denominations[i];
+
+			if (cents % denominations[i] == 0)
+				break;
 		}
 	}
 	printf("%d\n", num_coins);

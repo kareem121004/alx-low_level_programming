@@ -11,28 +11,31 @@
 
 int main(int argc, char *argv[])
 {
-	if (argc != 2)
+	if (argc == 2)
 	{
-		printf("Error\n");
-		return (1);
-	}
+		int cents = atoi(argv[1]);
+		int num_coins = 0;
+		int denominations[] = {25, 10, 5, 2, 1};
+		int i;
 
-	int cents = atoi(argv[1]);
-	int num_coins = 0;
-	int denominations[] = {25, 10, 5, 2, 1};
-	int i;
-
-	for (i = 0; i < 5; i++)
-	{
-		while (cents >= denominations[i])
+		for (i = 0; i < 5; i++)
 		{
-			num_coins += cents / denominations[i];
-			cents = cents % denominations[i];
+			while (cents >= denominations[i])
+			{
+				num_coins += cents / denominations[i];
+				cents = cents % denominations[i];
 
-			if (cents % denominations[i] == 0)
-				break;
+				if (cents % denominations[i] == 0)
+					break;
+
+			}
 		}
+		printf("%d\n", num_coins);
 	}
-	printf("%d\n", num_coins);
+	else
+	{
+		 printf("Error\n");
+		 return (1);
+	}
 	return (0);
 }

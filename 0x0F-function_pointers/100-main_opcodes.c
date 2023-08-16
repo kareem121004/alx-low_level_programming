@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 
 	while (c--)
 	{
-		printf("02hhx%s", *p++, c ? " " : "\n");
+		printf("%02hhx%s", *p++, c ? " " : "\n");
 	}
 	return (0);
 }

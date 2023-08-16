@@ -26,8 +26,7 @@ int main(int argc, char *argv[])
 	{
 		printf("Error\n");
 		exit(99);
-        }
-
+	}
 	if ((*op == '/' && b == 0) ||
 			(*op == '%' && b == 0))
 	{

@@ -6,7 +6,7 @@
  * @ap: pointer
 */
 
-void format_char(char * seperator, va_list ap)
+void format_char(char *seperator, va_list ap)
 {
 	printf("%s%c", seperator,  va_arg(ap, int));
 }
@@ -17,7 +17,7 @@ void format_char(char * seperator, va_list ap)
  * @ap: pointer
 */
 
-void format_int(char * seperator, va_list ap)
+void format_int(char *seperator, va_list ap)
 {
 	printf("%s%d", seperator,  va_arg(ap, int));
 }
@@ -28,7 +28,7 @@ void format_int(char * seperator, va_list ap)
  * @ap: pointer
 */
 
-void format_float(char * seperator, va_list ap)
+void format_float(char *seperator, va_list ap)
 {
 	printf("%s%f", seperator,  va_arg(ap, double));
 }
@@ -39,15 +39,14 @@ void format_float(char * seperator, va_list ap)
  * @ap: pointer
 */
 
-void format_string(char * seperator, va_list ap)
+void format_string(char *seperator, va_list ap)
 {
 	char *str = va_arg(ap, char *);
-	
+
 	switch ((int)(!str))
 	case 1:
 		str = "(nil)";
-	
-	printf("%s%s", seperator, str);	
+	printf("%s%s", seperator, str);
 
 }
 

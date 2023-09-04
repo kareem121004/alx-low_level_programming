@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 
 	if (file_from == -1)
 		dprintf(STDERR_FILENO, ERROR_READ_FILE, argv[1]), exit(98);
-	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	if (file_to == -1)
 		dprintf(STDERR_FILENO, ERROR_WRITE_FILE, argv[2]), exit(99);
@@ -39,10 +39,11 @@ int main(int argc, char **argv)
 
 	if (bytes_read == -1)
 		dprintf(STDERR_FILENO, ERROR_READ_FILE, argv[1]), exit(98);
-
-	if (close(file_from == -1)
+	file_from = close(file_from);
+	file_to = close(file_to);
+	if (file_from)
 		dprintf(STDERR_FILENO, ERROR_CLOSE_FD, file_from), exit(100);
-	if (close(file_to) == -1)
+	if (file_to)
 		dprintf(STDERR_FILENO, ERROR_CLOSE_FD, file_to), exit(100);
 
 	return (EXIT_SUCCESS);

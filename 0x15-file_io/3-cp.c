@@ -5,7 +5,7 @@
 #define ERROR_READ_FILE "Error: Can't read from file %s\n"
 #define ERROR_WRITE_FILE "Error: Can't write to %s\n"
 #define ERROR_CLOSE_FD "Error: Can't close fd %d\n"
-
+#define PERMISSIONS (S_IRUSR | S_IWUSR | S_IWGRP | S_IROTH)
 /**
  * main - Copies the contents of a file to another file.
  * @argc: The number of arguments supplied to the program.
@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 
 	if (file_from == -1)
 		dprintf(STDERR_FILENO, ERROR_READ_FILE, argv[1]), exit(98);
-	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, PERMISSIONS);
 
 	if (file_to == -1)
 		dprintf(STDERR_FILENO, ERROR_WRITE_FILE, argv[2]), exit(99);

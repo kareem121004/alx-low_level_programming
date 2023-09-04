@@ -47,5 +47,5 @@ int main(int argc, char *argv[])
 	if (file_to)
 		dprintf(STDERR_FILENO, ERROR_CLOSE_FD, file_to), exit(100);
 
-	return (0);
+	return (EXIT_SUCCESS);
 }

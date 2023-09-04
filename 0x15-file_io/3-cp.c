@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	ssize_t bytes_read;
 
 	if (argc != 3)
-		dprintf(STDERR_FILENO, ERROR_ARG_COUNT, argv[0]), exit(97);
+		dprintf(STDERR_FILENO, ERROR_ARG_COUNT), exit(97);
 
 	file_from = open(argv[1], O_RDONLY);
 

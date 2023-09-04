@@ -1,6 +1,5 @@
 #include "main.h"
 
-#define BUFFER_SIZE 1024
 
 /**
  * main - Copies the contents of a file to another file.

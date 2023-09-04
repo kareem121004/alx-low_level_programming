@@ -11,28 +11,29 @@
 
 int main(int argc, char *argv[])
 {
+	int file_from = 0, file_to = 0;
+	char buffer[BUFFER_SIZE];
+	ssize_t bytes_read;
+
 	if (argc != 3)
 	{
 		 dprintf(2, "Usage: %s file_from file_to\n", argv[0]);
 		 exit(97);
 	}
-	int file_from = open(argv[1], O_RDONLY);
+	file_from = open(argv[1], O_RDONLY);
 
 	if (file_from == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	int file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
 	if (file_to == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	char buffer[BUFFER_SIZE];
-	ssize_t bytes_read;
-
 	while ((bytes_read = read(file_from, buffer, BUFFER_SIZE)) > 0)
 	{
 		if (write(file_to, buffer, bytes_read) != bytes_read)

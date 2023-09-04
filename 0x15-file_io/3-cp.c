@@ -15,7 +15,7 @@
 
 int main(int argc, char **argv)
 {
-	int file_from = 0, file_to = 0;
+	int file_from, file_to;
 	ssize_t bytes_read;
 	char buffer[BUFFER_SIZE];
 

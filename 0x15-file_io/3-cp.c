@@ -40,11 +40,9 @@ int main(int argc, char **argv)
 	if (bytes_read == -1)
 		dprintf(STDERR_FILENO, ERROR_READ_FILE, argv[1]), exit(98);
 
-	file_from = close(file_from);
-	file_to = close(file_to);
-	if (file_from)
+	if (close(file_from == -1)
 		dprintf(STDERR_FILENO, ERROR_CLOSE_FD, file_from), exit(100);
-	if (file_to)
+	if (close(file_to) == -1)
 		dprintf(STDERR_FILENO, ERROR_CLOSE_FD, file_to), exit(100);
 
 	return (EXIT_SUCCESS);

@@ -1,7 +1,7 @@
 #include "main.h"
 
 
-#define ERROR_ARG_COUNT "Usage: %s file_from file_to\n"
+#define ERROR_ARG_COUNT "Usage: cp file_from file_to"
 #define ERROR_READ_FILE "Error: Can't read from file %s\n"
 #define ERROR_WRITE_FILE "Error: Can't write to %s\n"
 #define ERROR_CLOSE_FD "Error: Can't close fd %d\n"

@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 {
 	int file_from, file_to;
 	ssize_t bytes_read;
-	char buffer[BUFFER_SIZE];
+	char buffer[Read_BUF_SIZE];
 
 	if (argc != 3)
 		dprintf(STDERR_FILENO, ERROR_ARG_COUNT), exit(97);
@@ -32,11 +32,9 @@ int main(int argc, char **argv)
 	if (file_to == -1)
 		dprintf(STDERR_FILENO, ERROR_WRITE_FILE, argv[2]), exit(99);
 
-	while ((bytes_read = read(file_from, buffer, BUFFER_SIZE)) > 0)
-	{
+	while ((bytes_read = read(file_from, buffer, Read_BUF_SIZE)) > 0)
 		if (write(file_to, buffer, bytes_read) != bytes_read)
 			dprintf(STDERR_FILENO, ERROR_WRITE_FILE, argv[2]), exit(99);
-	}
 
 	if (bytes_read == -1)
 		dprintf(STDERR_FILENO, ERROR_READ_FILE, argv[1]), exit(98);

@@ -22,7 +22,7 @@ void hash_table_delete(hash_table_t *ht)
 			temp = current;
 			current = current->next;
 			free(tmp->key);
-			free(temp->value);
+			free(tmp->value);
 			free(tmp);
 		}
 	}
